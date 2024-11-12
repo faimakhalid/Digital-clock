@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ffc75f, #6a57ff, #43e97b, #6fd5ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.clock {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.8),
+        0 0 25px rgba(255, 100, 255, 0.6),
+        0 0 35px rgba(100, 255, 255, 0.4);
+    animation: glowPulse 1.5s ease-in-out infinite;
+    letter-spacing: 5px;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 1),
+            0 0 30px rgba(255, 100, 255, 0.7),
+            0 0 50px rgba(100, 255, 255, 0.95);
+    }
+    50% {
+        text-shadow: 
+            0 0 30px rgba(255, 255, 255, 1.2),
+            0 0 40px rgb(255, 100, 255),
+            0 0 60px rgba(100, 255, 255, 0.6);
+    }
+}
